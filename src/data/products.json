@@ -1,0 +1,145 @@
+[
+  {
+    "title": "Smartphone Samsung Galaxy S23",
+    "description": "El último modelo de Samsung con pantalla AMOLED y cámara de 200 MP",
+    "price": "90000",
+    "code": "s23sam123",
+    "stock": 150,
+    "id": 1,
+    "category": "Electrónica",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/s23.jpg"
+    ]
+  },
+  {
+    "title": "Laptop Dell XPS 13",
+    "description": "Potente y delgada laptop con procesador Intel Core i7 y pantalla 4K",
+    "price": "120000",
+    "code": "dellxps456",
+    "stock": 50,
+    "id": 2,
+    "category": "Computadoras",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/dellxps.jpg"
+    ]
+  },
+  {
+    "title": "Smartwatch Apple Watch Series 8",
+    "description": "Reloj inteligente con ECG, seguimiento de actividad física y resistencia al agua",
+    "price": "35000",
+    "code": "applwatch789",
+    "stock": 100,
+    "id": 3,
+    "category": "Accesorios",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/applewatch.jpg"
+    ]
+  },
+  {
+    "title": "Auriculares Sony WH-1000XM5",
+    "description": "Auriculares inalámbricos con cancelación de ruido y sonido Hi-Res",
+    "price": "28000",
+    "code": "sonyaudio012",
+    "stock": 80,
+    "id": 4,
+    "category": "Accesorios",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/sonyheadphones.jpg"
+    ]
+  },
+  {
+    "title": "Tableta iPad Pro 12.9",
+    "description": "Tableta con pantalla Liquid Retina, procesador M2 y Apple Pencil compatible",
+    "price": "85000",
+    "code": "ipadpro345",
+    "stock": 70,
+    "id": 5,
+    "category": "Computadoras",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/ipadpro.jpg"
+    ]
+  },
+  {
+    "title": "Cámara Sony Alpha 7 IV",
+    "description": "Cámara mirrorless con sensor full-frame de 33 MP y grabación 4K",
+    "price": "180000",
+    "code": "sonycamera678",
+    "stock": 30,
+    "id": 6,
+    "category": "Fotografía",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/sonycamera.jpg"
+    ]
+  },
+  {
+    "title": "Smart TV LG OLED 55”",
+    "description": "Televisor 4K OLED con soporte HDR, webOS y Dolby Vision",
+    "price": "70000",
+    "code": "lgoled901",
+    "stock": 120,
+    "id": 7,
+    "category": "Electrónica",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/lgoled.jpg"
+    ]
+  },
+  {
+    "title": "Consola Sony PlayStation 5",
+    "description": "Consola de videojuegos con soporte 4K y capacidad de carga ultrarrápida",
+    "price": "95000",
+    "code": "ps5game234",
+    "stock": 90,
+    "id": 8,
+    "category": "Videojuegos",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/ps5.jpg"
+    ]
+  },
+  {
+    "title": "Cargador inalámbrico Anker",
+    "description": "Cargador inalámbrico de alta velocidad para dispositivos compatibles",
+    "price": "1500",
+    "code": "ankercharg567",
+    "stock": 300,
+    "id": 9,
+    "category": "Accesorios",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/ankercharger.jpg"
+    ]
+  },
+  {
+    "title": "Teclado mecánico Logitech G Pro",
+    "description": "Teclado mecánico con switches Romer-G y retroiluminación RGB",
+    "price": "10000",
+    "code": "logitech890",
+    "stock": 120,
+    "id": 10,
+    "category": "Accesorios",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/logitechkeyboard.jpg"
+    ]
+  },
+  {
+    "title": "Disco Duro Externo Seagate 2TB",
+    "description": "Disco duro portátil de 2TB con USB 3.0 y compatibilidad con Windows y Mac",
+    "price": "4500",
+    "code": "seagatedrive558",
+    "stock": 80,
+    "id": 11,
+    "category": "Almacenamiento",
+    "status": true,
+    "thumbnails": [
+      "https://www.tech-now.com.ar/images/products/seagatedrive.jpg"
+    ]
+  }
+]
