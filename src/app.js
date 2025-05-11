@@ -1,19 +1,24 @@
+require("dotenv").config();
 const express = require("express");
 const { engine } = require("express-handlebars");
 const path = require("path");
-const productsRouter = require("./routes/products.routes");
-const cartsRouter = require("./routes/carts.routes");
-const viewsRouter = require("./routes/views.routes");
+const productsRouter = require("./routes/products.router");
+const cartsRouter = require("./routes/carts.router");
+const viewsRouter = require("./routes/views.router");
+const connectDB = require("./config/db");
 
 const app = express();
-const httpServer = require('http').createServer(app);
-const { Server } = require('socket.io');
+const httpServer = require("http").createServer(app);
+const { Server } = require("socket.io");
 const io = new Server(httpServer);
 
-app.engine("handlebars", engine({
-  defaultLayout: "main",
-  layoutsDir: path.join(__dirname, "views", "layouts"),
-}));
+app.engine(
+  "handlebars",
+  engine({
+    defaultLayout: "main",
+    layoutsDir: path.join(__dirname, "views", "layouts"),
+  })
+);
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
@@ -30,25 +35,36 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Error interno del servidor" });
 });
 
-io.on('connection', (socket) => {
-  console.log('Cliente conectado con WebSocket');
+io.on("connection", (socket) => {
+  console.log("Cliente conectado vía WebSocket");
 
-  socket.on('newProduct', (product) => {
-    console.log("Nuevo producto recibido:", product);
-    io.emit('productsUpdated', product);
+  socket.on("newProduct", (product) => {
+    console.log("🆕 Producto recibido:", product);
+    io.emit("productsUpdated", product);
   });
 
-  socket.on('deleteProduct', (productId) => {
+  socket.on("deleteProduct", (productId) => {
     console.log("Producto eliminado:", productId);
-    io.emit('productsUpdated', productId);
+    io.emit("productsUpdated", productId);
   });
 
-  socket.on('disconnect', () => {
-    console.log('Cliente desconectado');
+  socket.on("disconnect", () => {
+    console.log("Cliente desconectado");
   });
 });
 
-const PORT = 8080;
-httpServer.listen(PORT, () => {
-  console.log(`✅ Servidor escuchando en el puerto ${PORT}`);
-});
+const PORT = process.env.PORT || 8080;
+
+const initServer = async () => {
+  try {
+    await connectDB();
+    httpServer.listen(PORT, () => {
+      console.log(`Servidor escuchando en http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error("No se pudo iniciar el servidor:", error.message);
+    process.exit(1);
+  }
+};
+
+initServer();
