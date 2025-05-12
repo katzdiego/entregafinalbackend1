@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2"); // Asegúrate de tener este paquete instalado
 
 const productSchema = new mongoose.Schema(
   {
@@ -13,5 +14,8 @@ const productSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+// Aplicar el plugin de paginación
+productSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("Product", productSchema);
