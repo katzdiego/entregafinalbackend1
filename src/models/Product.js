@@ -1,21 +1,24 @@
 const mongoose = require("mongoose");
-const mongoosePaginate = require("mongoose-paginate-v2"); // Asegúrate de tener este paquete instalado
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const productSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true },
-    description: String,
-    price: { type: Number, required: true },
-    thumbnail: String,
-    code: { type: String, required: true, unique: true },
-    stock: { type: Number, default: 0 },
-    category: { type: String, required: true },
+    title: { type: String, required: true, trim: true },
+    description: { type: String, default: "", trim: true },
+    price: { type: Number, required: true, min: 0 },
+    thumbnail: { type: String, default: "" },
+    code: { type: String, required: true, unique: true, trim: true },
+    stock: { type: Number, default: 0, min: 0 },
+    category: { type: String, required: true, trim: true },
     status: { type: Boolean, default: true },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    collection: "products", // Si querés que la colección se llame específicamente así
+  }
 );
 
-// Aplicar el plugin de paginación
+// Plugin de paginación
 productSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("Product", productSchema);
