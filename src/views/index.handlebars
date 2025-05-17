@@ -6,6 +6,11 @@
       <h3>{{this.title}}</h3>
       <p>{{this.description}}</p>
       <p><strong>Precio:</strong> ${{this.price}}</p>
+
+      <form action="/api/carts/6827e62f3f97bfe07c12a17d/products/{{this._id}}" method="POST" style="display: inline;">
+        <button type="submit">Agregar al carrito</button>
+      </form>
+
       <a href="/product/{{this._id}}">Ver detalle</a>
     </li>
   {{/each}}
