@@ -14,11 +14,11 @@ const productSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "products", // Si querés que la colección se llame específicamente así
+    collection: "TechNow",
   }
 );
 
-// Plugin de paginación
+
 productSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("Product", productSchema);
